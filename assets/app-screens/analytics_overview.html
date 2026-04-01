@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=DM+Sans:wght@400;500;700&amp;family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#c7c6c6",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#464744",
+              "outline": "#777777",
+              "primary-fixed-dim": "#474646",
+              "primary-fixed": "#5f5e5e",
+              "on-tertiary": "#e3e3df",
+              "on-error-container": "#410002",
+              "on-secondary": "#ffffff",
+              "outline-variant": "#c6c6c6",
+              "background": "#f9f9f7",
+              "surface-tint": "#5f5e5e",
+              "on-tertiary-fixed-variant": "#e3e3df",
+              "surface-dim": "#dadad8",
+              "secondary-fixed-dim": "#ababab",
+              "on-secondary-container": "#1b1c1c",
+              "surface-bright": "#f9f9f7",
+              "on-primary-fixed-variant": "#e5e2e1",
+              "on-primary-container": "#ffffff",
+              "on-primary": "#e5e2e1",
+              "tertiary-fixed": "#5d5f5c",
+              "inverse-surface": "#2f3130",
+              "inverse-primary": "#c9c6c5",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed": "#ffffff",
+              "primary-container": "#3c3b3b",
+              "on-surface": "#1a1c1b",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "tertiary-container": "#747572",
+              "on-error": "#ffffff",
+              "secondary-container": "#d5d4d4",
+              "tertiary": "#3a3c39",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#3b3b3c",
+              "on-background": "#1a1c1b",
+              "primary": "#000000",
+              "surface-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1b1c1c",
+              "inverse-on-surface": "#f1f1ef",
+              "surface-container-high": "#e8e8e6",
+              "surface": "#f9f9f7",
+              "on-surface-variant": "#474747",
+              "on-tertiary-container": "#ffffff",
+              "on-primary-fixed": "#ffffff",
+              "secondary": "#5e5e5e"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"],
+              "serif": ["Playfair Display"],
+              "sans": ["DM Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #f9f9f7;
+      }
+      .fern-texture {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c-2 10-10 15-20 15 10 0 18 5 20 15 2-10 10-15 20-15-10 0-18-5-20-15z' fill='%230a0a0a' fill-opacity='0.04'/%3E%3C/svg%3E");
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background selection:bg-primary selection:text-white pb-32">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl h-16 pl-2">
+  <div class="flex justify-between items-center h-full p-6 max-w-4xl mx-auto w-full">
+  <div class="flex items-center gap-4">
+  <span class="material-symbols-outlined text-neutral-950" data-icon="menu">menu</span>
+  <span class="font-serif font-bold text-neutral-950 text-2xl tracking-tight">tapara</span>
+  </div>
+  </div>
+</nav>
+<main class="pt-24 px-6 max-w-5xl mx-auto fern-texture min-h-screen">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<h1 class="font-serif text-5xl font-bold tracking-tight text-primary">Analytics</h1>
+<p class="text-outline mt-2 font-sans tracking-wide uppercase text-xs">Performance Overview</p>
+</div>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full border border-outline-variant hover:bg-surface-container-low transition-colors duration-300">
+<span class="text-sm font-sans font-medium text-primary">Last 7 Days</span>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</div>
+<!-- 2x2 Bento Stats Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant flex flex-col justify-between h-40 group hover:border-primary transition-colors duration-500">
+<span class="text-[10px] uppercase tracking-widest font-sans font-bold text-outline">Total Revenue</span>
+<div class="mt-auto">
+<span class="text-3xl font-serif font-bold text-primary">$4,284.50</span>
+<div class="flex items-center gap-1 text-xs text-green-600 font-sans mt-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span>12.4%</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant flex flex-col justify-between h-40 group hover:border-primary transition-colors duration-500">
+<span class="text-[10px] uppercase tracking-widest font-sans font-bold text-outline">Transactions</span>
+<div class="mt-auto">
+<span class="text-3xl font-serif font-bold text-primary">312</span>
+<div class="flex items-center gap-1 text-xs text-green-600 font-sans mt-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span>8.1%</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant flex flex-col justify-between h-40 group hover:border-primary transition-colors duration-500">
+<span class="text-[10px] uppercase tracking-widest font-sans font-bold text-outline">Customers</span>
+<div class="mt-auto">
+<span class="text-3xl font-serif font-bold text-primary">89</span>
+<div class="flex items-center gap-1 text-xs text-neutral-400 font-sans mt-1">
+<span class="material-symbols-outlined text-xs">horizontal_rule</span>
+<span>Static</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant flex flex-col justify-between h-40 group hover:border-primary transition-colors duration-500">
+<span class="text-[10px] uppercase tracking-widest font-sans font-bold text-outline">Avg Ticket</span>
+<div class="mt-auto">
+<span class="text-3xl font-serif font-bold text-primary">$13.73</span>
+<div class="flex items-center gap-1 text-xs text-red-500 font-sans mt-1">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+<span>2.3%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Revenue Chart Section -->
+<div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/30 mb-8 relative overflow-hidden">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="font-serif text-2xl font-bold text-primary">Revenue Trend</h3>
+<p class="text-outline text-sm font-sans mt-1">Daily earnings over the selected period</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-xs font-sans text-primary">Revenue</span>
+</div>
+</div>
+</div>
+<!-- Simple 7-day Bar Chart -->
+<div class="h-64 flex items-end justify-between gap-4 px-2 relative z-10">
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 rounded-t-lg transition-all duration-700 hover:bg-primary" style="height: 60%;"></div>
+<span class="text-[10px] font-sans font-medium text-outline uppercase tracking-tighter">Mon</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 rounded-t-lg transition-all duration-700 hover:bg-primary" style="height: 45%;"></div>
+<span class="text-[10px] font-sans font-medium text-outline uppercase tracking-tighter">Tue</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 rounded-t-lg transition-all duration-700 hover:bg-primary" style="height: 85%;"></div>
+<span class="text-[10px] font-sans font-medium text-outline uppercase tracking-tighter">Wed</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 rounded-t-lg transition-all duration-700 hover:bg-primary" style="height: 55%;"></div>
+<span class="text-[10px] font-sans font-medium text-outline uppercase tracking-tighter">Thu</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 rounded-t-lg transition-all duration-700 hover:bg-primary" style="height: 95%;"></div>
+<span class="text-[10px] font-sans font-medium text-outline uppercase tracking-tighter">Fri</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 rounded-t-lg transition-all duration-700 hover:bg-primary" style="height: 75%;"></div>
+<span class="text-[10px] font-sans font-medium text-outline uppercase tracking-tighter">Sat</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary/10 rounded-t-lg transition-all duration-700 hover:bg-primary" style="height: 40%;"></div>
+<span class="text-[10px] font-sans font-medium text-outline uppercase tracking-tighter">Sun</span>
+</div>
+</div>
+<!-- Decorative Koru Stroke -->
+<div class="absolute -bottom-10 -right-10 opacity-5 pointer-events-none">
+<svg fill="none" height="200" viewbox="0 0 100 100" width="200" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 90C10 90 40 85 50 50C60 15 90 10 90 10M10 90C10 90 15 40 50 30C85 20 90 10 90 10" stroke="#0A0A0A" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Quick Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/60 flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<span class="text-[10px] uppercase tracking-widest font-sans font-bold text-outline block">Busiest Time</span>
+<span class="text-lg font-sans font-bold text-primary">8-9am</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/60 flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">local_cafe</span>
+</div>
+<div>
+<span class="text-[10px] uppercase tracking-widest font-sans font-bold text-outline block">Top Item</span>
+<span class="text-lg font-sans font-bold text-primary">Flat white</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/60 flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">sync</span>
+</div>
+<div>
+<span class="text-[10px] uppercase tracking-widest font-sans font-bold text-outline block">Return Rate</span>
+<span class="text-lg font-sans font-bold text-primary">68%</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-t border-neutral-100 dark:border-neutral-900 flex justify-around items-center pt-3 pb-8 px-4">
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+  <span class="material-symbols-outlined">home_app_logo</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Home</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+  <span class="material-symbols-outlined">receipt_long</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Activity</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+  <span class="material-symbols-outlined">loyalty</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">loyalty</span>
+  </a>
+  <!-- Active Tab: Admin/Analytics Mapping -->
+  <a class="flex flex-col items-center justify-center text-neutral-950 dark:text-neutral-50 font-bold active:scale-90 transition-all" href="#">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group_work</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Admin</span>
+  </a>
+</nav>
+
+</body></html>

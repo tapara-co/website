@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=DM+Sans:wght@400;500;700&amp;family=Noto+Serif:wght@700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#ffffff",
+              "on-error-container": "#410002",
+              "tertiary": "#3a3c39",
+              "secondary-fixed": "#c7c6c6",
+              "primary": "#000000",
+              "surface-container": "#eeeeec",
+              "secondary": "#5e5e5e",
+              "surface": "#f9f9f7",
+              "on-surface-variant": "#474747",
+              "primary-fixed-dim": "#474646",
+              "on-tertiary-container": "#ffffff",
+              "inverse-primary": "#c9c6c5",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#ffffff",
+              "on-background": "#1a1c1b",
+              "surface-container-low": "#f4f4f2",
+              "surface-dim": "#dadad8",
+              "on-primary-fixed-variant": "#e5e2e1",
+              "primary-container": "#3c3b3b",
+              "on-secondary-container": "#1b1c1c",
+              "surface-container-high": "#e8e8e6",
+              "tertiary-fixed-dim": "#464744",
+              "tertiary-container": "#747572",
+              "surface-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1b1c1c",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#5d5f5c",
+              "on-secondary-fixed-variant": "#3b3b3c",
+              "surface-bright": "#f9f9f7",
+              "on-surface": "#1a1c1b",
+              "surface-container-lowest": "#ffffff",
+              "surface-tint": "#5f5e5e",
+              "on-primary": "#e5e2e1",
+              "surface-container-highest": "#e2e3e1",
+              "outline": "#777777",
+              "inverse-surface": "#2f3130",
+              "on-primary-container": "#ffffff",
+              "inverse-on-surface": "#f1f1ef",
+              "outline-variant": "#c6c6c6",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ababab",
+              "background": "#f9f9f7",
+              "on-tertiary": "#e3e3df",
+              "on-tertiary-fixed-variant": "#e3e3df",
+              "on-error": "#ffffff",
+              "primary-fixed": "#5f5e5e",
+              "secondary-container": "#d5d4d4"
+            },
+            fontFamily: {
+              "serif": ["Playfair Display", "serif"],
+              "sans": ["DM Sans", "sans-serif"],
+              "headline": ["Noto Serif", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .fern-pattern {
+            background-color: #0A0A0A;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5C30 5 28 15 15 15C15 15 25 17 25 30C25 30 15 32 15 45C15 45 28 45 30 55C30 55 32 45 45 45C45 45 35 43 35 30C35 30 45 28 45 15C45 15 32 15 30 5Z' fill='%23ffffff' fill-opacity='0.08'/%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-white text-on-surface font-body selection:bg-surface-container-highest min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl h-16 pl-2">
+<div class="flex justify-between items-center h-full p-6 max-w-4xl mx-auto w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-neutral-950" data-icon="menu">menu</span>
+<span class="font-serif font-bold text-neutral-950 text-2xl tracking-tight">tapara</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="mt-16 flex-grow px-6 max-w-4xl mx-auto w-full">
+<!-- Customer Banner -->
+<section class="fern-pattern rounded-lg p-8 mb-10 relative overflow-hidden flex flex-col md:flex-row items-center gap-6 shadow-sm">
+<div class="w-20 h-20 rounded-full bg-white flex items-center justify-center text-primary text-3xl font-serif font-bold shrink-0">
+                J
+            </div>
+<div class="flex flex-col text-center md:text-left">
+<h1 class="font-serif text-4xl font-bold text-white mb-1">James Mitchell</h1>
+<p class="font-sans text-neutral-400 tracking-wide text-sm font-medium">6 visits · Regular</p>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Left Column: Order Flow -->
+<div class="space-y-10">
+<!-- Their Usual Card -->
+<div>
+<h2 class="font-sans text-[10px] uppercase tracking-[0.2em] font-bold text-outline mb-4">Their usual</h2>
+<div class="bg-surface-container-low rounded-lg p-5 flex justify-between items-center group cursor-pointer hover:bg-neutral-100 transition-colors">
+<div>
+<p class="font-sans font-medium text-primary">Flat white, oat milk</p>
+<p class="font-sans text-sm text-outline">$6.50</p>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Current Order Section -->
+<div>
+<h2 class="font-sans text-[10px] uppercase tracking-[0.2em] font-bold text-outline mb-4">Current order</h2>
+<div class="h-32 flex flex-col items-center justify-center border-2 border-dashed border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-outline-variant mb-2" data-icon="shopping_basket">shopping_basket</span>
+<p class="font-sans text-sm text-outline italic">No items added yet</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Entry & Total -->
+<button class="w-full py-4 bg-primary text-white rounded-full font-sans font-bold text-sm tracking-widest uppercase hover:scale-[0.98] transition-transform">
+                        Add to order
+                    </button>
+</div>
+<!-- Summary Section -->
+<div class="pt-8 border-t border-surface-container">
+<div class="flex justify-between items-baseline mb-8">
+<span class="font-sans text-[10px] uppercase tracking-widest font-bold text-outline">Total</span>
+<span class="font-serif text-5xl font-bold text-primary"> $0.00</span>
+</div>
+<button class="w-full py-5 bg-neutral-100 text-neutral-400 rounded-full font-sans font-bold text-sm tracking-widest uppercase cursor-not-allowed flex items-center justify-center gap-2" disabled="">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+                        Send payment request
+                    </button>
+<p class="text-center mt-4 font-sans text-xs text-outline italic">Payment link will be sent to James' Tapara app</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-t border-neutral-100 dark:border-neutral-900 flex justify-around items-center pt-3 pb-8 px-4">
+  <a class="flex flex-col items-center justify-center text-neutral-950 dark:text-neutral-50 font-bold active:scale-90 transition-all" href="#">
+    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+    <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Home</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+  <span class="material-symbols-outlined">receipt_long</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Activity</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+  <span class="material-symbols-outlined">loyalty</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">loyalty</span>
+  </a>
+  <!-- Active Tab: Admin/Analytics Mapping -->
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+    <span class="material-symbols-outlined">group_work</span>
+    <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Admin</span>
+  </a>
+</nav>
+</body></html>

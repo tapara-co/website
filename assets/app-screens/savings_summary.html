@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Noto+Serif:wght@700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#c7c6c6",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#464744",
+              "outline": "#777777",
+              "primary-fixed-dim": "#474646",
+              "primary-fixed": "#5f5e5e",
+              "on-tertiary": "#e3e3df",
+              "on-error-container": "#410002",
+              "on-secondary": "#ffffff",
+              "outline-variant": "#c6c6c6",
+              "background": "#f9f9f7",
+              "surface-tint": "#5f5e5e",
+              "on-tertiary-fixed-variant": "#e3e3df",
+              "surface-dim": "#dadad8",
+              "secondary-fixed-dim": "#ababab",
+              "on-secondary-container": "#1b1c1c",
+              "surface-bright": "#f9f9f7",
+              "on-primary-fixed-variant": "#e5e2e1",
+              "on-primary-container": "#ffffff",
+              "on-primary": "#e5e2e1",
+              "tertiary-fixed": "#5d5f5c",
+              "inverse-surface": "#2f3130",
+              "inverse-primary": "#c9c6c5",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed": "#ffffff",
+              "primary-container": "#3c3b3b",
+              "on-surface": "#1a1c1b",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "tertiary-container": "#747572",
+              "on-error": "#ffffff",
+              "secondary-container": "#d5d4d4",
+              "tertiary": "#3a3c39",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#3b3b3c",
+              "on-background": "#1a1c1b",
+              "primary": "#000000",
+              "surface-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1b1c1c",
+              "inverse-on-surface": "#f1f1ef",
+              "surface-container-high": "#e8e8e6",
+              "surface": "#f9f9f7",
+              "on-surface-variant": "#474747",
+              "on-tertiary-container": "#ffffff",
+              "on-primary-fixed": "#ffffff",
+              "secondary": "#5e5e5e"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif", "serif"],
+              "serif": ["Playfair Display", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"],
+              "sans": ["DM Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .geometric-fern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0c0 16.568-13.432 30-30 30 16.568 0 30 13.432 30 30 0-16.568 13.432-30 30-30-16.568 0-30-13.432-30-30z' fill='%230a0a0a' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl h-16 pl-2">
+  <div class="flex justify-between items-center h-full p-6 max-w-4xl mx-auto w-full">
+  <div class="flex items-center gap-4">
+  <span class="material-symbols-outlined text-neutral-950" data-icon="menu">menu</span>
+  <span class="font-serif font-bold text-neutral-950 text-2xl tracking-tight">tapara</span>
+  </div>
+  </div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-lg mx-auto geometric-fern min-h-screen">
+<!-- Hero Card -->
+<section class="mb-10">
+<div class="bg-primary text-white rounded-xl p-10 flex flex-col items-center justify-center text-center shadow-xl relative overflow-hidden">
+<!-- Decorative Subtle Koru Stroke -->
+<div class="absolute -top-10 -right-10 w-40 h-40 border border-white/10 rounded-full"></div>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] opacity-60 mb-4">Total Accrued</span>
+<div class="font-serif text-7xl font-bold tracking-tight mb-2">
+                    $47.20
+                </div>
+<div class="h-1 w-12 bg-white/20 rounded-full mt-4"></div>
+</div>
+</section>
+<!-- Explanation Section -->
+<section class="mb-12">
+<div class="bg-surface-container-low rounded-lg p-8 border border-outline-variant/30">
+<h2 class="font-sans text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">info</span>
+                    How is this calculated?
+                </h2>
+<div class="space-y-4 text-on-surface-variant font-sans leading-relaxed opacity-90">
+<p class="text-[15px]">The sum of merchant-specific loyalty discounts and paywave savings from every tapara transaction you make.</p>
+<p class="text-[15px]">These micro-savings are aggregated here in real-time, reflecting your true purchasing power within our curated ecosystem.</p>
+</div>
+</div>
+</section>
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-5 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/20 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center font-serif text-lg">C</div>
+<div>
+<div class="font-sans font-medium text-primary group-hover:tracking-wide transition-all">Customs Coffee</div>
+<div class="text-[11px] text-outline uppercase tracking-tighter">8 Transactions</div>
+</div>
+</div>
+<div class="font-serif text-xl font-bold">$28.40</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-5 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/20 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center font-serif text-lg">D</div>
+<div>
+<div class="font-sans font-medium text-primary group-hover:tracking-wide transition-all">Daily Bread</div>
+<div class="text-[11px] text-outline uppercase tracking-tighter">4 Transactions</div>
+</div>
+</div>
+<div class="font-serif text-xl font-bold">$12.10</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-5 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/20 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center font-serif text-lg">M</div>
+<div>
+<div class="font-sans font-medium text-primary group-hover:tracking-wide transition-all">Mojo Coffee</div>
+<div class="text-[11px] text-outline uppercase tracking-tighter">2 Transactions</div>
+</div>
+</div>
+<div class="font-serif text-xl font-bold">$6.70</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-t border-neutral-100 dark:border-neutral-900 flex justify-around items-center pt-3 pb-8 px-4">
+  <a class="flex flex-col items-center justify-center text-neutral-950 dark:text-neutral-50 font-bold active:scale-90 transition-all" href="#">
+    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_app_logo</span>
+    <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Home</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+  <span class="material-symbols-outlined">receipt_long</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Activity</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+  <span class="material-symbols-outlined">loyalty</span>
+  <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">loyalty</span>
+  </a>
+  <!-- Active Tab: Admin/Analytics Mapping -->
+  <a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300" href="#">
+    <span class="material-symbols-outlined">group_work</span>
+    <span class="font-sans text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Admin</span>
+  </a>
+</nav>
+</body></html>
