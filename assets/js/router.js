@@ -1,7 +1,7 @@
 (function () {
   var ACTIVE_DESKTOP = 'font-serif text-lg tracking-tight text-neutral-900 font-semibold border-b-2 border-neutral-900 pb-1';
   var INACTIVE_DESKTOP = 'font-serif text-lg tracking-tight text-neutral-500 hover:text-neutral-800 transition-colors';
-  var ACTIVE_MOBILE = 'flex flex-col items-center justify-center text-neutral-900 bg-neutral-100 rounded-full px-4 py-1';
+  var ACTIVE_MOBILE = 'flex flex-col items-center justify-center text-neutral-900';
   var INACTIVE_MOBILE = 'flex flex-col items-center justify-center text-neutral-400 hover:text-neutral-900';
 
   /* ── Scroll-reveal observer ── */
@@ -25,8 +25,22 @@
   observeSections(document.querySelector('main') || document.body);
 
   /* ── SPA router ── */
+  var ROUTE_MAP = {
+    '/': '/', '/consumers': '/consumers', '/merchants': '/merchants',
+    '/about': '/about', '/contact': '/contact'
+  };
+
   function pageFromUrl(url) {
-    return new URL(url, location.href).pathname.split('/').pop() || 'index.html';
+    var path = new URL(url, location.href).pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    return ROUTE_MAP[path] || path;
+  }
+
+  function toHtmlUrl(url) {
+    var u = new URL(url, location.href);
+    var path = u.pathname.replace(/\/$/, '') || '/';
+    if (path === '/') return u.origin + '/index.html';
+    if (!/\.html$/.test(path)) return u.origin + path + '.html';
+    return url;
   }
 
   function updateNav(page) {
@@ -40,8 +54,14 @@
     var mobileNav = document.querySelector('.md\\:hidden.fixed.bottom-0');
     if (mobileNav) {
       mobileNav.querySelectorAll('a[href]').forEach(function (a) {
-        var target = a.getAttribute('href') === page ? ACTIVE_MOBILE : INACTIVE_MOBILE;
+        var isActive = a.getAttribute('href') === page;
+        var target = isActive ? ACTIVE_MOBILE : INACTIVE_MOBILE;
         if (a.className !== target) a.className = target;
+        var label = a.querySelector('span:last-child');
+        if (label) {
+          label.classList.toggle('font-bold', isActive);
+          label.classList.toggle('font-medium', !isActive);
+        }
       });
     }
   }
@@ -70,12 +90,14 @@
 
   function navigate(url, pushState) {
     var page = pageFromUrl(url);
+    var fetchUrl = toHtmlUrl(url);
+    var displayUrl = page === '/' ? '/' : page;
     var oldMain = document.querySelector('main');
 
     // Fade out current content
     if (oldMain) oldMain.classList.add('swap-out');
 
-    loadPage(url, function (err, html) {
+    loadPage(fetchUrl, function (err, html) {
       if (err) { location.href = url; return; }
 
       var doc = new DOMParser().parseFromString(html, 'text/html');
@@ -102,7 +124,7 @@
         if (nd && od) od.setAttribute('content', nd.getAttribute('content'));
 
         updateNav(page);
-        if (pushState) history.pushState({ page: page }, '', url);
+        if (pushState) history.pushState({ page: page }, '', displayUrl);
         window.scrollTo(0, 0);
       }, 150);
     });
@@ -121,7 +143,8 @@
     var href = a.getAttribute('href');
     if (!href || href === '#' || href.charAt(0) === '#') return;
     if (href.indexOf('://') !== -1 && href.indexOf(location.origin) !== 0) return;
-    if (!/\.html$/.test(href) && href !== '/' && href !== '') return;
+    var clean = href.replace(/\.html$/, '').replace(/\/index$/, '/');
+    if (!(clean in ROUTE_MAP) && !/\.html$/.test(href)) return;
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     if (a.hasAttribute('download') || a.target === '_blank') return;
 
@@ -135,4 +158,14 @@
   window.addEventListener('popstate', function () {
     navigate(location.href, false);
   });
+
+  // Handle SPA redirect from 404.html
+  var redirect = sessionStorage.getItem('spa-redirect');
+  if (redirect) {
+    sessionStorage.removeItem('spa-redirect');
+    if (redirect !== '/') {
+      history.replaceState(null, '', redirect);
+      navigate(location.origin + redirect, false);
+    }
+  }
 })();

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>tapara</title>
+<script>
+// Redirect clean URLs to the SPA — GitHub Pages serves 404.html for unknown paths
+var path = location.pathname.replace(/\/$/, '') || '/';
+var routes = { '/': '/', '/consumers': '/', '/merchants': '/', '/about': '/', '/contact': '/' };
+if (path in routes) {
+  sessionStorage.setItem('spa-redirect', path);
+  location.replace('/');
+} else {
+  location.replace('/');
+}
+</script>
+</head>
+<body></body>
+</html>
