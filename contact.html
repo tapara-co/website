@@ -98,33 +98,6 @@ Send Message
 <h3 class="font-serif text-3xl font-bold text-primary">Message sent.</h3>
 <p class="text-secondary text-lg">We'll be in touch soon.</p>
 </div>
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = this;
-  var btn = form.querySelector('button[type="submit"]');
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  fetch('https://formspree.io/f/mkopzwop', {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(function(r) {
-    if (r.ok) {
-      form.classList.add('hidden');
-      document.getElementById('form-success').classList.remove('hidden');
-    } else {
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
-      alert('Something went wrong. Please try again.');
-    }
-  }).catch(function() {
-    btn.disabled = false;
-    btn.textContent = 'Send Message';
-    alert('Something went wrong. Please try again.');
-  });
-});
-</script>
 </div>
 </div>
 </section>

@@ -159,6 +159,34 @@
     navigate(location.href, false);
   });
 
+  // Contact form handler (event delegation so it works after SPA navigation)
+  document.addEventListener('submit', function (e) {
+    var form = e.target.closest('#contact-form');
+    if (!form) return;
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    fetch('https://formspree.io/f/mkopzwop', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) {
+      if (r.ok) {
+        form.classList.add('hidden');
+        document.getElementById('form-success').classList.remove('hidden');
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        alert('Something went wrong. Please try again.');
+      }
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      alert('Something went wrong. Please try again.');
+    });
+  });
+
   // Handle SPA redirect from 404.html
   var redirect = sessionStorage.getItem('spa-redirect');
   if (redirect) {
