@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./*.html",
+    "./assets/app-screens/**/*.html",
   ],
   darkMode: "class",
   theme: {
