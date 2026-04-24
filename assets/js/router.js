@@ -26,7 +26,8 @@
 
   /* ── SPA router ── */
   var ROUTE_MAP = {
-    '/': '/', '/consumers': '/consumers', '/merchants': '/merchants',
+    '/': '/', '/consumers': '/consumers', '/businesses': '/businesses',
+    '/merchants': '/businesses',
     '/about': '/about', '/contact': '/contact'
   };
 
@@ -90,7 +91,7 @@
 
   function navigate(url, pushState) {
     var page = pageFromUrl(url);
-    var fetchUrl = toHtmlUrl(url);
+    var fetchUrl = toHtmlUrl(location.origin + page);
     var displayUrl = page === '/' ? '/' : page;
     var oldMain = document.querySelector('main');
 

@@ -7,7 +7,7 @@
 <script>
 // Redirect clean URLs to the SPA — GitHub Pages serves 404.html for unknown paths
 var path = location.pathname.replace(/\/$/, '') || '/';
-var routes = { '/': '/', '/consumers': '/', '/merchants': '/', '/about': '/', '/contact': '/' };
+var routes = { '/': '/', '/consumers': '/', '/businesses': '/', '/merchants': '/', '/about': '/', '/contact': '/' };
 if (path in routes) {
   sessionStorage.setItem('spa-redirect', path);
   location.replace('/');
